@@ -1,0 +1,139 @@
+{
+  "theme": "Light theme preferred (with Soft Utility / Clean Tech aesthetic).",
+  "typography": {
+    "headings": "Outfit (Tech/Startups vibe, sans-serif)",
+    "body": "IBM Plex Sans (Highly readable, CS/Coding vibe)",
+    "mono": "JetBrains Mono (For code blocks or small labels)",
+    "rules": [
+      "Headings > 32px must use tracking-tight.",
+      "Overlines/Labels must be uppercase, tracking-[0.2em] and text-xs.",
+      "Never use Inter for headings.",
+      "Variable weights used for emphasis instead of standard bold."
+    ]
+  },
+  "colors": {
+    "archetype": "Swiss & High-Contrast mixed with Soft Utility",
+    "palette": {
+      "base": {
+        "background": "#FAFAFA",
+        "surface": "#FFFFFF",
+        "border": "#E5E7EB",
+        "text_primary": "#111827",
+        "text_secondary": "#6B7280"
+      },
+      "brand": {
+        "primary": "#2563EB",
+        "primary_hover": "#1D4ED8",
+        "accent": "#FBBF24",
+        "accent_hover": "#F59E0B"
+      }
+    },
+    "rules": [
+      "Avoid muddy gray transparency. DO NOT use complete transparent background in header, overlays, any surface that has content under it.",
+      "Ensure text meets APCA standards.",
+      "Use primary color for CTAs sparingly.",
+      "No full-screen generic gradients."
+    ]
+  },
+  "visual_enhancers": {
+    "surfaces": [
+      "Glassmorphism for Sticky Headers (bg-white/80, backdrop-blur-xl, 1px bottom border border-black/5).",
+      "Cards: Flat solid background, 1px border-border, no shadow. Hover: slight lift -translate-y-1, subtle shadow-lg, border color darkens.",
+      "Grid Borders: Expose the skeleton for lesson grids."
+    ],
+    "textures": [
+      "Subtle grain/noise overlay on the hero section for a tactile feel.",
+      "Dotted grid background pattern for the 'Computer Science' vibe."
+    ]
+  },
+  "grids": {
+    "marketing_home": "MODE A: 'Tetris' Grid. gap-8. Mix Hero spans (col-span-full md:col-span-8 row-span-2) with supporting squares.",
+    "dashboard_admin": "MODE B: High Density Grid. gap-6. Full height children.",
+    "rules": [
+      "Mobile-first: always start with grid-cols-1.",
+      "Direct children only for grid items."
+    ]
+  },
+  "layouts": {
+    "hero_section": "Bento layout featuring teacher photo, welcome text, and quick stats (16 років стажу, вища категорія).",
+    "class_navigation": "Modular cards for grades 5-9. Clear, touch-friendly.",
+    "lesson_page": "Clean and Simple design. Video player dominant, with sidebar or tabbed sections for Homework, Presentation, Extra Materials.",
+    "admin_dashboard": "Sidebar navigation. Dense table layouts for CRUD operations. No unnecessary cards."
+  },
+  "motion": {
+    "rules": [
+      "Micro-animations on all interactive elements (hover, active, focus).",
+      "Staggered entrance animations for lesson lists.",
+      "Smooth page transitions using framer-motion.",
+      "Respect prefers-reduced-motion."
+    ]
+  },
+  "accessibility": {
+    "rules": [
+      "Normal text: minimum 4.5:1 contrast.",
+      "Large text/Interactive: minimum 3:1 contrast.",
+      "Focus states must have higher contrast than default state.",
+      "Add aria-hidden='true' to decorative icons.",
+      "Include data-testid on all interactive elements (e.g., data-testid='lesson-card-5')."
+    ]
+  },
+  "media": {
+    "icons": "lucide-react (Default choice, highly legible, modern)",
+    "images": [
+      {
+        "category": "hero_teacher_portrait",
+        "url": "https://images.pexels.com/photos/5212321/pexels-photo-5212321.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Portrait of a teacher standing in front of a blackboard, used for the Hero section to establish trust and authority."
+      },
+      {
+        "category": "classroom_students",
+        "url": "https://images.pexels.com/photos/5530437/pexels-photo-5530437.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Students focused on computers, used for the 'About Classes' or generic background."
+      },
+      {
+        "category": "coding_abstract",
+        "url": "https://images.unsplash.com/photo-1555949963-aa79dcee981c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzN8MHwxfHNlYXJjaHwxfHxjb2RpbmclMjBkaWdpdGFsJTIwdGVjaG5vbG9neSUyMGFic3RyYWN0fGVufDB8fHx8MTc3NDI3NTQwOXww&ixlib=rb-4.1.0&q=85",
+        "description": "Abstract coding background, used for tech accents or banner backgrounds."
+      }
+    ]
+  },
+  "libraries": {
+    "ui": [
+      "shadcn/ui",
+      "lucide-react",
+      "sonner"
+    ],
+    "motion": [
+      "framer-motion"
+    ],
+    "3d_and_creative": [
+      "react-fast-marquee"
+    ]
+  },
+  "instructions_to_main_agent": [
+    "Build the frontend using React (JS), Tailwind CSS, and Shadcn UI.",
+    "Ensure all routing works perfectly for Home -> Class -> Lesson.",
+    "For the admin panel, implement a secure login and a dashboard with a data table for lessons (CRUD).",
+    "Implement a global search bar in the header that filters lessons/topics.",
+    "Do NOT use HTML inputs for complex forms; use Shadcn Form components.",
+    "Do NOT center align the app container in App.css.",
+    "Do NOT use universal transition 'transition: all'.",
+    "Use named exports for components and default exports for pages.",
+    "Use pure HTML + Tailwind for marketing/home page layouts, avoiding rigid Shadcn Cards where asymmetry is needed.",
+    "Use sonner for toast notifications."
+  ],
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "Dark colors look good when used independently without gradients. DO NOT use dark colors as gradients.",
+    "Don't make generic centered layouts, simplistic gradients, and uniform styling.",
+    "Create depth through layered design elements with z-index hierarchy.",
+    "Use glass-morphism effects with backdrop filters (12-24px blur).",
+    "You MUST NOT apply universal transition. Eg: `transition: all`.",
+    "You MUST NOT center align the app container.",
+    "Always use modern button styles like pill-shaped, or sharp button with interaction animations & color relevant to the app style.",
+    "NEVER use AI assistant Emoji characters for icons.",
+    "Every interaction needs micro-animations - hover states, transitions.",
+    "Use 2-3x more spacing than feels comfortable.",
+    "Subtle grain textures, noise overlays, custom cursors, selection states, and loading animations separate good from extraordinary.",
+    "All interactive and key informational elements MUST include a data-testid attribute."
+  ]
+}
